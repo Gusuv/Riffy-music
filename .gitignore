@@ -1,0 +1,8 @@
+## For MacOS ##
+.DS_Store
+
+## For Vs_Code ##
+.vscode/
+
+## idea ##
+.idea
