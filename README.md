@@ -3,7 +3,7 @@
 ![Go](https://img.shields.io/badge/Go-1.24-blue) ![Gin](https://img.shields.io/badge/Gin-1.10-blue) ![Vue.js](https://img.shields.io/badge/Vue.js-green)
 
 ---
-<img src="images/images_for_github/big_logo_riffy.png" width="175"/>
+<img src="additional_images/big_logo_riffy.png" width="175"/>
 
 
 ## О проекте
