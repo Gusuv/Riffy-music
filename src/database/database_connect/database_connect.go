@@ -1,8 +1,8 @@
 package database_connect
 
 import (
+	Configuration "Riffy-music/src/config"
 	"Riffy-music/src/database/models"
-	"fmt"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 	"log"
@@ -10,6 +10,8 @@ import (
 )
 
 func DBConnect() *gorm.DB {
+	Configuration.Init()
+
 	db_name := os.Getenv("DATABASE_DSN")
 
 	db, err := gorm.Open(postgres.Open(db_name), &gorm.Config{})
@@ -19,7 +21,8 @@ func DBConnect() *gorm.DB {
 	err = db.AutoMigrate(&models.Users{})
 
 	if err != nil {
-		fmt.Errorf("Проблема с миграцией")
+		log.Panic("Проблема с миграцией")
+
 	}
 
 	return db

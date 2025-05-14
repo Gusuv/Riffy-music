@@ -10,5 +10,5 @@ type Users struct {
 	Avatar_url      string
 	Birth_year      int64     `gorm:"not null"`
 	Country         string    `gorm:"not null"`
-	registered_date time.Time `gorm:"default:now()"`
+	Registered_date time.Time `gorm:"default:now()"`
 }

@@ -1,13 +1,14 @@
-package Riffy_music
+package Configuration
 
 import (
 	"github.com/joho/godotenv"
 	"log"
 )
 
-func init() {
+func Init() {
 	err := godotenv.Load(".env")
 	if err != nil {
 		log.Fatal("Ошибка загрузки .env")
 	}
+
 }
