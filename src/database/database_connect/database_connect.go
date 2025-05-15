@@ -1,22 +1,20 @@
-package database_connect
+package Dbconnect
 
 import (
-	Configuration "Riffy-music/src/config"
+	Config "Riffy-music/src/config"
 	"Riffy-music/src/database/models"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 	"log"
-	"os"
 )
 
 func DBConnect() *gorm.DB {
-	Configuration.Init()
+	Config.Init()
 
-	db_name := os.Getenv("DATABASE_DSN")
-
-	db, err := gorm.Open(postgres.Open(db_name), &gorm.Config{})
+	db, err := gorm.Open(postgres.Open(Config.DatabaseDns()), &gorm.Config{})
 	if err != nil {
 		log.Panic(err, "Нет подключения к БД")
+		return nil
 	}
 	err = db.AutoMigrate(&models.Users{})
 

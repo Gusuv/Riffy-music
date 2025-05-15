@@ -1,4 +1,4 @@
-package Configuration
+package Config
 
 import (
 	"github.com/joho/godotenv"
@@ -10,5 +10,4 @@ func Init() {
 	if err != nil {
 		log.Fatal("Ошибка загрузки .env")
 	}
-
 }
