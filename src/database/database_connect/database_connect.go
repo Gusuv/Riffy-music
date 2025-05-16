@@ -11,7 +11,7 @@ import (
 func DBConnect() *gorm.DB {
 	Config.Init()
 
-	db, err := gorm.Open(postgres.Open(Config.DatabaseDns()), &gorm.Config{})
+	db, err := gorm.Open(postgres.Open(Config.DatabaseDsn()), &gorm.Config{})
 	if err != nil {
 		log.Panic(err, "Нет подключения к БД")
 		return nil

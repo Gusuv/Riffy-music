@@ -9,7 +9,7 @@ import (
 
 var ctx = context.Background()
 
-func ConnectRedis() {
+func ConnectRedis() *redis.Client {
 
 	Config.Init()
 
@@ -21,13 +21,13 @@ func ConnectRedis() {
 		DB:       0,
 	})
 
-	pong, err := client.Ping(ctx).Result()
+	err := client.Ping(ctx).Err()
 	if err != nil {
 		panic(err)
-		return
+		return nil
 	}
-	fmt.Println("Подключение удалось:", pong)
+	fmt.Println("Связь с Redis установлена")
 
-	defer client.Close()
+	return client
 
 }

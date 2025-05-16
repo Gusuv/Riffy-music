@@ -9,7 +9,7 @@ func RedisAddr() string {
 	return Redis_addr
 }
 
-func DatabaseDns() string {
-	db_dns := os.Getenv("DATABASE_DSN")
-	return db_dns
+func DatabaseDsn() string {
+	db_dsn := os.Getenv("DATABASE_DSN")
+	return db_dsn
 }
